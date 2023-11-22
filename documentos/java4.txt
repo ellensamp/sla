@@ -1,0 +1,22 @@
+package br.com.senac.pratos;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/pratos")
+public class PratoController {
+
+    @Autowired
+    private PratoService pratoService;
+
+    @PostMapping
+    public Prato salvar(@RequestBody Prato prato) {
+        return pratoService.salvar(prato);
+    }
+
+    @GetMapping
+    public List<Prato> listar() {
+        return pratoService.listar();
+    }
+}

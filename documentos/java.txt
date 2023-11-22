@@ -1,0 +1,20 @@
+package br.com.senac.pratos;
+
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+public class Prato {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+
+    private String ingredientes;
+
+    private String tipo;
+}
